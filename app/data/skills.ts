@@ -53,3 +53,34 @@ export const skills: SKILLS[] = [
     updatedAt: "2023-01-05T00:00:00Z",
   },
 ];
+
+// Get a skill by its ID
+export const getSkillById = async (id: string): Promise<SKILLS | undefined> => {
+  return skills.find((skill) => skill.id === id);
+};
+
+// Get all skills
+export const getAllSkills = async (): Promise<SKILLS[]> => {
+  return skills;
+};
+
+// Add a new skill
+export const addSkill = (newSkill: SKILLS): void => {
+  skills.push(newSkill);
+};
+
+// Update an existing skill
+export const updateSkill = (updatedSkill: SKILLS): void => {
+  const index = skills.findIndex((skill) => skill.id === updatedSkill.id);
+  if (index !== -1) {
+    skills[index] = updatedSkill;
+  }
+};
+
+// Delete a skill by its ID
+export const deleteSkill = (id: string): void => {
+  const index = skills.findIndex((skill) => skill.id === id);
+  if (index !== -1) {
+    skills.splice(index, 1);
+  }
+};

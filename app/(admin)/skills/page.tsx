@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { skills, type SKILLS } from "./skills";
+import { getAllSkills, type SKILLS } from "../../data/skills";
 
-const SkillsPage = () => {
+const SkillsPage = async () => {
+  const skills: SKILLS[] = await getAllSkills(); // Fetch skills from the data source
+
   return (
     <div className="p-8">
       {/* Header */}
       <div className="w-full bg-gray-800 text-white p-4 rounded flex items-center justify-between mb-8">
-        <h1>Skills Page</h1>
+        <h1 className="text-xl font-semibold">Skills</h1>
 
         {/* New Skill Link */}
         <Link
@@ -17,7 +19,7 @@ const SkillsPage = () => {
         </Link>
       </div>
 
-      <ul className="flex gap-4">
+      <ul className="flex flex-wrap gap-4">
         {skills.map((skill: SKILLS) => (
           <Link
             href={`/skills/${skill.id}`}
@@ -27,7 +29,7 @@ const SkillsPage = () => {
             <li key={skill.id} className="space-y-1">
               {/* Skill Card */}
               {/* Badge */}
-              <span className="inline-block px-3 py-1 text-xs font-semibold text-green-500 bg-green-200 rounded-full">
+              <span className="inline-block px-3 py-1 text-xs text-green-700 bg-green-200 rounded-full">
                 {skill.category}
               </span>
 
@@ -40,7 +42,7 @@ const SkillsPage = () => {
               <h2 className="text-lg font-bold text-white">{skill.name}</h2>
 
               {/* Description */}
-              <p className="text-gray-300">{skill.description}</p>
+              <p className="text-gray-300 line-clamp-2">{skill.description}</p>
 
               {/* Timestamps */}
               {/* <p className="text-gray-300">Created At: {skill.createdAt}</p> */}
