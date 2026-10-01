@@ -3,6 +3,7 @@ export type SKILLS = {
   name: string;
   description: string;
   category: string;
+  isPublic?: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -13,6 +14,7 @@ export const skills: SKILLS[] = [
     name: "JavaScript",
     description: "A programming language used for web development.",
     category: "Programming Language",
+    isPublic: true,
     createdAt: "2023-01-01T00:00:00Z",
     updatedAt: "2023-01-01T00:00:00Z",
   },
@@ -22,6 +24,7 @@ export const skills: SKILLS[] = [
     description:
       "A JavaScript library for building user interfaces, maintained by Facebook.",
     category: "Frontend Framework",
+    isPublic: true,
     createdAt: "2023-01-02T00:00:00Z",
     updatedAt: "2023-01-02T00:00:00Z",
   },
@@ -31,6 +34,7 @@ export const skills: SKILLS[] = [
     description:
       "A superset of JavaScript that adds static typing and other features.",
     category: "Programming Language",
+    isPublic: true,
     createdAt: "2023-01-03T00:00:00Z",
     updatedAt: "2023-01-03T00:00:00Z",
   },
@@ -40,6 +44,7 @@ export const skills: SKILLS[] = [
     description:
       "A JavaScript runtime built on Chrome's V8 JavaScript engine, used for server-side development.",
     category: "Backend Framework",
+    isPublic: true,
     createdAt: "2023-01-04T00:00:00Z",
     updatedAt: "2023-01-04T00:00:00Z",
   },
@@ -49,6 +54,7 @@ export const skills: SKILLS[] = [
     description:
       "A high-level programming language known for its readability and versatility.",
     category: "Programming Language",
+    isPublic: true,
     createdAt: "2023-01-05  T00:00:00Z",
     updatedAt: "2023-01-05T00:00:00Z",
   },
