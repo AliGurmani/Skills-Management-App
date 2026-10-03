@@ -56,6 +56,7 @@ const SignUpForm = () => {
       {/* Feedback Messages */}
       {message && (
         <p
+          role="alert"
           aria-live="polite"
           className="sr-only bg-green-500 text-white p-2 rounded"
         >
@@ -63,7 +64,9 @@ const SignUpForm = () => {
         </p>
       )}
       {error && (
-        <div className="bg-red-500 text-white p-2 rounded">{error}</div>
+        <div role="alert" className="bg-red-500 text-white p-2 rounded">
+          {error}
+        </div>
       )}
 
       {/* Form */}
