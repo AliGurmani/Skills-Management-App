@@ -284,7 +284,7 @@ const CreateSkillForm = () => {
               {/* Buttons */}
               <div className="flex flex-col-reverse gap-3 border-t border-gray-800 pt-6 sm:flex-row sm:justify-end">
                 <Link
-                  href="/skills"
+                  href="/dashboard/skills"
                   className="
                     inline-flex items-center justify-center
                     rounded-lg
